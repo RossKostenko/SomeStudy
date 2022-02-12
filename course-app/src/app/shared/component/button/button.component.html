@@ -1,0 +1,8 @@
+<button
+  class="btn custom-btn d-flex justify-content-around"
+  [ngStyle]="{ width: width + 'px', height: height + 'px' }"
+  (click)="onClick()"
+>
+  <app-icon [icon]="icon" *ngIf="icon"></app-icon>
+  {{ label }}
+</button>

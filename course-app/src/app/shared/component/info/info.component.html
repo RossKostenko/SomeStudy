@@ -1,0 +1,14 @@
+<div>
+  <div class="mt-3" *ngIf="title">
+    <h2 class="align-text-center">
+      <strong>{{ title }}</strong>
+    </h2>
+  </div>
+  <div *ngIf="title">
+    <h3 class="align-text-center">
+      Please use <strong>'Add new course'</strong> button to add your first
+      course
+    </h3>
+  </div>
+  <ng-content></ng-content>
+</div>

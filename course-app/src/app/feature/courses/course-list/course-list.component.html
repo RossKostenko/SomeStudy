@@ -1,0 +1,13 @@
+<app-course-card
+  [editable]="editable"
+  [card]="item"
+  *ngFor="let item of courses"
+></app-course-card>
+<app-info [title]="courses?.length === 0 ? 'Your List Is Empty' : ''">
+  <app-button
+    label="Add new Course"
+    [width]="180"
+    [height]="40"
+    class="d-flex justify-content-center"
+  ></app-button>
+</app-info>
