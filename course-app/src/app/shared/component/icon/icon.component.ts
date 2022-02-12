@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   Input,
 } from "@angular/core";
-import { faPen, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-icon",
@@ -14,7 +14,7 @@ import { faPen, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 })
 export class IconComponent implements OnInit {
   // Ask why i cannot not use no assignement
-  @Input() icon: IconDefinition = faPen;
+  @Input() icon: IconDefinition | null = null;
 
   constructor() {}
 

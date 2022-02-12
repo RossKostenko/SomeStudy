@@ -12,4 +12,18 @@
   <main class="my-4">
     <app-course-list [editable]="true"></app-course-list>
   </main>
+  <app-button
+    [width]="240"
+    [height]="40"
+    label="Open Modal"
+    class="d-flex justify-content-center"
+    (clickChange)="testModalVisable = true"
+  ></app-button>
+  <app-modal
+    *ngIf="testModalVisable"
+    id="abracadabra"
+    title="Test Modal"
+    message="Here is some test modal"
+    (click)="testModalVisable = false"
+  ></app-modal>
 </div>

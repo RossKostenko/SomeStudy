@@ -6,6 +6,7 @@ import { IconModule } from "./component/icon/icon.module";
 import { SearchModule } from "./component/search/search.module";
 import { PipesModule } from "./pipes/pipes.module";
 import { InfoModule } from "./component/info/info.module";
+import { ModalModule } from "./component/modal/modal.module";
 
 @NgModule({
   declarations: [],
@@ -17,6 +18,7 @@ import { InfoModule } from "./component/info/info.module";
     InfoModule,
     SearchModule,
     PipesModule,
+    ModalModule,
   ],
   exports: [
     FontAwesomeModule,
@@ -24,6 +26,7 @@ import { InfoModule } from "./component/info/info.module";
     IconModule,
     InfoModule,
     SearchModule,
+    ModalModule,
   ],
 })
 export class SharedModule {}

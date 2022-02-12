@@ -1,7 +1,18 @@
-<app-course-card
-  [editable]="editable"
-  [card]="item"
-  *ngFor="let item of courses"
+<app-course-card [card]="item" *ngFor="let item of courses">
+  <div class="course-card-item-buttons my-4 mx-2 d-flex justify-content-around">
+    <app-button label="Show Course" [width]="180" [height]="40"></app-button>
+    <app-button
+      [icon]="editIcon"
+      [width]="40"
+      [height]="40"
+      *ngIf="editable"
+    ></app-button>
+    <app-button
+      [icon]="deleteIcon"
+      [width]="40"
+      [height]="40"
+      *ngIf="editable"
+    ></app-button></div
 ></app-course-card>
 <app-info [title]="courses?.length === 0 ? 'Your List Is Empty' : ''">
   <app-button

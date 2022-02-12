@@ -1,0 +1,23 @@
+.app-modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  background-color: #77777788;
+
+  z-index: 900;
+}
+
+.app-modal-content {
+  position: fixed;
+  top: calc(50% - 100px);
+  right: calc(50% - 135px);
+  width: 270px;
+  height: 200px;
+
+  background-color: white;
+
+  z-index: 1000;
+}

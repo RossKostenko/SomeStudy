@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
+import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { CourseItem } from "src/app/models/course-item.model";
 import { mockedCourseList } from "./mocks/mocks";
 
@@ -20,6 +21,9 @@ export class CourseListComponent {
   set isEmpty(value: boolean) {
     this._isEmpty = value;
   }
+
+  public editIcon = faPen;
+  public deleteIcon = faTrash;
 
   constructor() {
     if (!this.courses || this.courses.length === 0) {
