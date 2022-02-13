@@ -15,12 +15,11 @@
 }
 
 .x-button {
-  border-color: white !important;
   border-radius: 0;
 
   &:hover,
   &:focus {
-    background-color: #e2e2e2;
-    color: #333333;
+    background-color: variables.$alt-bg-color;
+    color: variables.$alt-hvr-color;
   }
 }

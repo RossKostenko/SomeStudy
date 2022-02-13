@@ -30,10 +30,6 @@ export class ModalComponent implements OnInit {
 
   @Output() close = new EventEmitter();
 
-  unableOutsideClick(event: MouseEvent) {
-    event.preventDefault();
-  }
-
   constructor(private el: ElementRef) {
     this.element = el.nativeElement;
   }
