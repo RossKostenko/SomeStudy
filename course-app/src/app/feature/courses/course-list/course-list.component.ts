@@ -1,7 +1,12 @@
-import { Component, ChangeDetectionStrategy, Input } from "@angular/core";
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Input,
+  Output,
+  EventEmitter,
+} from "@angular/core";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { CourseItem } from "src/app/models/course-item.model";
-import { mockedCourseList } from "./mocks/mocks";
 
 @Component({
   selector: "app-course-list",
@@ -10,8 +15,16 @@ import { mockedCourseList } from "./mocks/mocks";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseListComponent {
-  public courses: CourseItem[] = [...mockedCourseList];
-  @Input() editable = false;
+  @Input() editable: boolean = false;
+  @Input() courses: CourseItem[] | undefined;
+
+  @Output() listEvent = new EventEmitter();
+
+  public editIcon = faPen;
+  public deleteIcon = faTrash;
+  public infoText =
+    "Please use 'Add new course' button to add your first course";
+  public infoTitle = "Your List Is Empty";
 
   private _isEmpty = false;
   get isEmpty() {
@@ -21,9 +34,6 @@ export class CourseListComponent {
   set isEmpty(value: boolean) {
     this._isEmpty = value;
   }
-
-  public editIcon = faPen;
-  public deleteIcon = faTrash;
 
   constructor() {
     if (!this.courses || this.courses.length === 0) {

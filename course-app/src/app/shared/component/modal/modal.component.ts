@@ -21,6 +21,8 @@ export class ModalComponent implements OnInit {
   @Input() title = "";
   @Input() message = "";
   @Input() id = "";
+  @Input() cancelBtn = "";
+  @Input() okBtn = "";
 
   public closeIcon = faWindowClose;
 
