@@ -5,7 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { CoursesModule } from "./feature/courses/courses.module";
 import { HeaderModule } from "./feature/header/header.module";
-import { SharedModule } from "./shared/shared.module";
+import { CourseModule } from "./feature/course/course.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +14,7 @@ import { SharedModule } from "./shared/shared.module";
     AppRoutingModule,
     CoursesModule,
     HeaderModule,
-    SharedModule,
+    CourseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

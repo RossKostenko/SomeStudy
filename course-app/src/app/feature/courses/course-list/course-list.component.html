@@ -1,4 +1,4 @@
-<app-course-card [card]="item" *ngFor="let item of courses">
+<app-course-card [card]="course" *ngFor="let course of courses">
   <div class="course-card-item-buttons my-4 mx-2 d-flex justify-content-around">
     <app-button label="Show Course" [width]="180" [height]="40"></app-button>
     <app-button
@@ -14,7 +14,7 @@
       *ngIf="editable"
     ></app-button></div
 ></app-course-card>
-<app-info [title]="courses?.length === 0 ? 'Your List Is Empty' : ''">
+<app-info *ngIf="courses?.length === 0" [text]="infoText" [title]="infoTitle">
   <app-button
     label="Add new Course"
     [width]="180"

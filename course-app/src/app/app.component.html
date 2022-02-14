@@ -10,7 +10,7 @@
     </app-header>
   </header>
   <main class="my-4">
-    <app-course-list [editable]="true"></app-course-list>
+    <app-courses></app-courses>
   </main>
   <app-button
     [width]="240"
@@ -24,6 +24,8 @@
     id="abracadabra"
     title="Test Modal"
     message="Here is some test modal"
+    cancelBtn="Cancel"
+    okBtn="OK"
     (click)="testModalVisable = false"
   ></app-modal>
 </div>
