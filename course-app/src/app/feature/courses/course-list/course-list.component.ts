@@ -17,11 +17,25 @@ export class CourseListComponent {
   @Input() editable: boolean = false;
   @Input() courses: CourseItem[] | undefined;
 
-  @Output() listEvent = new EventEmitter();
+  @Output() courseClickOutput = new EventEmitter();
+  @Output() courseEditOutput = new EventEmitter();
+  @Output() courseDeleteOutput = new EventEmitter();
 
   public editIcon = faPen;
   public deleteIcon = faTrash;
   public infoText =
     "Please use 'Add new course' button to add your first course";
   public infoTitle = "Your List Is Empty";
+
+  onShowCourse() {
+    this.courseClickOutput.emit();
+  }
+
+  onCourseEdit() {
+    this.courseClickOutput.emit();
+  }
+
+  onCourseDelete() {
+    this.courseClickOutput.emit();
+  }
 }
