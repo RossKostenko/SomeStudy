@@ -6,19 +6,20 @@ import {
   EventEmitter,
 } from "@angular/core";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { CourseItem } from "src/app/models/course-item.model";
+import { CourseItem } from "src/app/feature/courses/course-card/course-item.model";
 
 @Component({
   selector: "app-course-list",
   templateUrl: "./course-list.component.html",
-  styleUrls: ["./course-list.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseListComponent {
   @Input() editable: boolean = false;
   @Input() courses: CourseItem[] | undefined;
 
-  @Output() listEvent = new EventEmitter();
+  @Output() courseClickOutput = new EventEmitter();
+  @Output() courseEditOutput = new EventEmitter();
+  @Output() courseDeleteOutput = new EventEmitter();
 
   public editIcon = faPen;
   public deleteIcon = faTrash;
@@ -26,18 +27,15 @@ export class CourseListComponent {
     "Please use 'Add new course' button to add your first course";
   public infoTitle = "Your List Is Empty";
 
-  private _isEmpty = false;
-  get isEmpty() {
-    return this._isEmpty;
+  onShowCourse() {
+    this.courseClickOutput.emit();
   }
 
-  set isEmpty(value: boolean) {
-    this._isEmpty = value;
+  onCourseEdit() {
+    this.courseClickOutput.emit();
   }
 
-  constructor() {
-    if (!this.courses || this.courses.length === 0) {
-      this.isEmpty = true;
-    }
+  onCourseDelete() {
+    this.courseClickOutput.emit();
   }
 }

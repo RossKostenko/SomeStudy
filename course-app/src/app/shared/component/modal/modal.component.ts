@@ -21,18 +21,14 @@ export class ModalComponent implements OnInit {
   @Input() title = "";
   @Input() message = "";
   @Input() id = "";
-  @Input() cancelBtn = "";
-  @Input() okBtn = "";
+  @Input() cancelBtn = "cancel";
+  @Input() okBtn = "Ok";
 
   public closeIcon = faWindowClose;
 
   private element: any;
 
   @Output() close = new EventEmitter();
-
-  unableOutsideClick(event: MouseEvent) {
-    event.preventDefault();
-  }
 
   constructor(private el: ElementRef) {
     this.element = el.nativeElement;
