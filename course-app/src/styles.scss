@@ -4,3 +4,9 @@
 input.ng-touched.ng-invalid {
   border-color: red !important;
 }
+
+.ng-submitted {
+  input.ng-invalid {
+    border-color: red !important;
+  }
+}

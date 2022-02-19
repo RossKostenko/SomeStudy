@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { faTshirt } from "@fortawesome/free-solid-svg-icons";
 import { emailCustomValidator } from "src/app/shared/directives/email.util";
 
 @Component({
