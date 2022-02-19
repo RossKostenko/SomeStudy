@@ -10,7 +10,7 @@ export function emailCustomValidator(): ValidatorFn {
       }
 
       return {
-        emailvalidator: { emailInvalid: true },
+        emailvalidator: { emailValidator: true },
       };
     }
     return null;
