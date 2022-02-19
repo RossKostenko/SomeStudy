@@ -14,6 +14,7 @@ import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
+  @Input() type: string = "button";
   @Input() addedClass = "";
   @Input() label = "";
   @Input() icon: IconDefinition | null = null;
