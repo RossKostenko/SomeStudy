@@ -1,16 +1,24 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  Output,
+  Input,
+  EventEmitter,
+} from "@angular/core";
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: "app-search",
+  templateUrl: "./search.component.html",
+  styleUrls: ["./search.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
+  @Input() placeholder = "Search...";
+  @Output() searchResult: any = new EventEmitter<string>();
 
-  constructor() { }
+  public searchInput = "";
 
-  ngOnInit(): void {
+  onSearch() {
+    this.searchResult.emit(this.searchResult);
   }
-
 }
