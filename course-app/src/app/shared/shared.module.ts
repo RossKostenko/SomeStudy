@@ -29,6 +29,7 @@ import { EmailCustomValidatorDirective } from "./directives/email-custom-validat
     SearchModule,
     ModalModule,
     EmailCustomValidatorDirective,
+    PipesModule,
   ],
 })
 export class SharedModule {}

@@ -10,6 +10,16 @@
           name="title"
           formControlName="title"
         />
+        <p
+          class="text-danger"
+          *ngIf="
+            (createCourse?.get('title')?.invalid &&
+              createCourse?.get('title')?.touched) ||
+            (isSubmited && createCourse?.get('title')?.invalid)
+          "
+        >
+          Title is required
+        </p>
       </div>
 
       <app-button
@@ -30,6 +40,16 @@
         formControlName="description"
         rows="7"
       ></textarea>
+      <p
+        class="text-danger"
+        *ngIf="
+          (createCourse?.get('description')?.invalid &&
+            createCourse?.get('description')?.touched) ||
+          (isSubmited && createCourse?.get('description')?.invalid)
+        "
+      >
+        Description is required
+      </p>
     </div>
     <div
       class="p-3 border border-success border-dark d-flex justify-content-between"
@@ -43,31 +63,70 @@
             id="card-edit-add-authors"
             class="form-control border border-warning"
             name="add_authors"
-            formControlName="addAuthors"
+            [formControlName]="'addAuthor'"
           />
+          <p
+            class="text-danger"
+            *ngIf="
+              (createCourse?.get('addAuthors')?.invalid &&
+                createCourse?.get('addAuthors')?.touched) ||
+              (isSubmited && createCourse?.get('addAuthors')?.invalid)
+            "
+          >
+            Author name incorrect must use only latin letters or numbers
+          </p>
           <app-button
             class="d-flex justify-content-center my-3"
             type="button"
             [width]="140"
             [height]="40"
             label="Create author"
+            (clickChange)="onAddAuthor()"
           ></app-button>
         </div>
         <div class="form-group">
           <h4 class="text-center">Duration</h4>
           <label for="card-edit-title">Duration</label>
           <input
-            type="number"
             id="card-edit-duration"
             class="form-control border border-warning"
             name="duration"
             formControlName="duration"
+            [(ngModel)]="duration"
           />
-          <div class="my-3">Duration: hours</div>
+          <p
+            class="text-danger"
+            *ngIf="
+              (createCourse?.get('duration')?.invalid &&
+                createCourse?.get('duration')?.touched) ||
+              (isSubmited && createCourse?.get('duration')?.invalid)
+            "
+          >
+            Duration is required
+          </p>
+          <div class="my-3">
+            Duration: {{ duration ? (duration | hours) : "00:00" }} hours
+          </div>
         </div>
       </div>
       <div class="w-50">
         <h4 class="text-center">Authors list</h4>
+        <div
+          class="mx-5 my-3"
+          *ngFor="let author of getAuthors(); let i = index"
+        >
+          <div class="d-flex justify-content-between">
+            <p>{{ author }}</p>
+            <app-button
+              [id]="i"
+              class="d-flex align-contnent-center"
+              [width]="140"
+              [height]="40"
+              label="Delete author"
+              (clickChange)="deleteAuthor(i)"
+            ></app-button>
+          </div>
+        </div>
       </div>
     </div>
   </form>
