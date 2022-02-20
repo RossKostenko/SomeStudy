@@ -1,6 +1,5 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -11,6 +10,7 @@ import { LoginModule } from "./feature/login/login.module";
 import { RegistrationModule } from "./feature/registration/registration.module";
 import { PasswordStrengthDirective } from "./shared/directives/password-strength-validator.directive";
 import { SharedModule } from "./shared/shared.module";
+import { CourseModule } from "./feature/course/course.module";
 
 @NgModule({
   declarations: [AppComponent, PasswordStrengthDirective],
@@ -23,6 +23,7 @@ import { SharedModule } from "./shared/shared.module";
     LoginModule,
     RegistrationModule,
     FormsModule,
+    CourseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

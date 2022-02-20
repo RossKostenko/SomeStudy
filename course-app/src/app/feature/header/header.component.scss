@@ -1,10 +1,13 @@
+$height: 60px;
+
 .main-header {
-  min-height: 60px;
+  min-height: $height;
 }
 
 .main-logo-props {
-  width: 138px;
-  height: 60px;
+  height: $height;
+  width: calc($height * 2.3);
+
   background-size: contain;
 }
 

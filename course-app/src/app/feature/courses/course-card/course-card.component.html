@@ -12,25 +12,19 @@
   </div>
   <div class="col-4">
     <div class="course-card-item-infoblock my-2 mx-2">
-      <label class="course-card-item-infoblock-label"
-        ><strong>Authors: </strong></label
-      >
+      <label class="course-card-item-infoblock-label"><b>Authors: </b></label>
       <span class="course-card-item-infoblock-content">
         {{ card.authors | stringJoiner }}
       </span>
     </div>
     <div class="course-card-item-infoblock my-2 mx-2">
-      <label class="course-card-item-infoblock-label"
-        ><strong>Duration: </strong></label
-      >
+      <label class="course-card-item-infoblock-label"><b>Duration: </b></label>
       <span class="course-card-item-infoblock-content">
         {{ card.duration | duration }} hours
       </span>
     </div>
     <div class="course-card-item-infoblock my-2 mx-2">
-      <label class="course-card-item-infoblock-label"
-        ><strong>Created: </strong></label
-      >
+      <label class="course-card-item-infoblock-label"><b>Created: </b></label>
       <span class="course-card-item-infoblock-content">
         {{ card.creationDate | creationDate }}
       </span>

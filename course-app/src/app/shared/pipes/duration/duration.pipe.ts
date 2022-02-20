@@ -1,11 +1,13 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { getHours } from "../../mappers";
+import { getTwoLengthNumber } from "../../utils";
 
 @Pipe({
   name: "duration",
 })
 export class DurationPipe implements PipeTransform {
   transform(duration: number): string {
-    return getHours(duration);
+    const hours = Math.floor(duration / 60);
+    const minutes = getTwoLengthNumber(duration % 60);
+    return `${hours}:${minutes}`;
   }
 }
