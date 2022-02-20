@@ -5,7 +5,6 @@ import { emailCustomValidator } from "src/app/shared/directives/email.util";
 @Component({
   selector: "app-registration",
   templateUrl: "./registration.component.html",
-  styleUrls: ["./registration.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationComponent implements OnInit {
