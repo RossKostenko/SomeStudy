@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { getHours } from "../../mappers";
 
 @Pipe({
-  name: "hours",
+  name: "duration",
 })
-export class HoursPipe implements PipeTransform {
+export class DurationPipe implements PipeTransform {
   transform(duration: number): string {
     return getHours(duration);
   }

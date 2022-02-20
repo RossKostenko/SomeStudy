@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { tranfromDate } from "../../mappers";
 
 @Pipe({
-  name: "transformDate",
+  name: "creationDate",
 })
-export class TransformDatePipe implements PipeTransform {
+export class CreationDatePipe implements PipeTransform {
   transform(date: string): string {
     return tranfromDate(date);
   }

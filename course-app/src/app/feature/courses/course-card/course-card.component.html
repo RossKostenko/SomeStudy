@@ -16,7 +16,7 @@
         ><strong>Authors: </strong></label
       >
       <span class="course-card-item-infoblock-content">
-        {{ card.authors | joinWithComa }}
+        {{ card.authors | stringJoiner }}
       </span>
     </div>
     <div class="course-card-item-infoblock my-2 mx-2">
@@ -24,7 +24,7 @@
         ><strong>Duration: </strong></label
       >
       <span class="course-card-item-infoblock-content">
-        {{ card.duration | hours }} hours
+        {{ card.duration | duration }} hours
       </span>
     </div>
     <div class="course-card-item-infoblock my-2 mx-2">
@@ -32,7 +32,7 @@
         ><strong>Created: </strong></label
       >
       <span class="course-card-item-infoblock-content">
-        {{ card.creationDate | transformDate }}
+        {{ card.creationDate | creationDate }}
       </span>
     </div>
     <ng-content></ng-content>
