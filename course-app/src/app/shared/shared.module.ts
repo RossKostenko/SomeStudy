@@ -7,9 +7,10 @@ import { SearchModule } from "./component/search/search.module";
 import { PipesModule } from "./pipes/pipes.module";
 import { InfoModule } from "./component/info/info.module";
 import { ModalModule } from "./component/modal/modal.module";
+import { EmailCustomValidatorDirective } from "./directives/email-custom-validator.directive";
 
 @NgModule({
-  declarations: [],
+  declarations: [EmailCustomValidatorDirective],
   imports: [
     CommonModule,
     FontAwesomeModule,
@@ -27,6 +28,8 @@ import { ModalModule } from "./component/modal/modal.module";
     InfoModule,
     SearchModule,
     ModalModule,
+    EmailCustomValidatorDirective,
+    PipesModule,
   ],
 })
 export class SharedModule {}

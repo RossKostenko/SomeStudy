@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: "joinWithComa",
+  name: "stringJoiner",
 })
-export class JoinWithComaPipe implements PipeTransform {
+export class StringJoinerPipe implements PipeTransform {
   transform(array: string[]): string {
     return array.join(", ");
   }

@@ -1,11 +1,12 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { JoinWithComaPipe } from "./join-with-coma/join-with-coma.pipe";
-import { HoursPipe } from "./hours/hours.pipe";
+import { StringJoinerPipe } from "./string-joiner/string-joiner.pipe";
+import { DurationPipe } from "./duration/duration.pipe";
+import { CreationDatePipe } from "./creation-date/creation-date.pipe";
 
 @NgModule({
-  declarations: [JoinWithComaPipe, HoursPipe],
+  declarations: [StringJoinerPipe, DurationPipe, CreationDatePipe],
   imports: [CommonModule],
-  exports: [JoinWithComaPipe, HoursPipe],
+  exports: [StringJoinerPipe, DurationPipe, CreationDatePipe],
 })
 export class PipesModule {}
