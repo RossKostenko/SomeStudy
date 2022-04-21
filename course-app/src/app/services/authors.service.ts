@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthorPayload } from '../core/author-payload.interface';
+import { AuthorResponse } from '../core/author-response.interface';
 import { Location } from '../core/location.enum';
 
 @Injectable({
@@ -10,14 +11,7 @@ export class AuthorsService {
   constructor(private http: HttpClient) {}
 
   public getAll() {
-    // try to fix any types
-    this.http.get<any>(`${Location.ROOT}${Location.AUTHORS}${Location.ALL}`).subscribe((response): any => {
-      if (response?.successful) {
-        console.log(response.result);
-      } else {
-        console.log(response);
-      }
-    });
+    return this.http.get<AuthorResponse>(`${Location.ROOT}${Location.AUTHORS}${Location.ALL}`);
   }
 
   public addAuthor(author: string) {

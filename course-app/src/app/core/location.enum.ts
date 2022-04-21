@@ -3,4 +3,5 @@ export enum Location {
   COURSES = '/courses',
   ALL = '/all',
   AUTHORS = '/authors',
+  ADD = '/add',
 }
